@@ -6,10 +6,13 @@ import { AppLoading } from "expo";
 import * as Font from "expo-font";
 import ReduxThunk from "redux-thunk";
 
-import ShopNavigator from "./navigation/ShopNavigator";
 import productsReducer from "./store/reducers/product";
 import cartReducer from "./store/reducers/cart";
+import authReducer from "./store/reducers/auth";
 import ordersReducer from "./store/reducers/orders";
+// see NavigationContainer file
+// import ShopNavigator from "./navigation/ShopNavigator";
+import NavigationContainer from "./navigation/NavigationContainer";
 
 const fetchFonts = async () => {
   return await Font.loadAsync({
@@ -21,7 +24,8 @@ const fetchFonts = async () => {
 const rootReducer = combineReducers({
   products: productsReducer,
   cart: cartReducer,
-  orders: ordersReducer
+  orders: ordersReducer,
+  auth: authReducer
 });
 
 // const store = createStore(rootReducer);
@@ -42,7 +46,8 @@ export default function App() {
 
   return (
     <Provider store={store}>
-      <ShopNavigator />
+      {/*<ShopNavigator />*/}
+      <NavigationContainer />
     </Provider>
   );
 }

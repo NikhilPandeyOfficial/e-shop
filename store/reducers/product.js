@@ -8,8 +8,10 @@ import {
 import Product from "../../models/product";
 
 const initialState = {
-  availableProducts: PRODUCTS,
-  userProducts: PRODUCTS.filter(prod => prod.ownerId === "u1")
+  // availableProducts: PRODUCTS,
+  // userProducts: PRODUCTS.filter(prod => prod.ownerId === "u1")
+  availableProducts: [],
+  userProducts: []
 };
 
 let count = 11;
@@ -19,14 +21,17 @@ export default (state = initialState, action) => {
     case SET_PRODUCTS:
       return {
         availableProducts: action.products,
-        userProducts: action.products.filter(prod => prod.ownerId === "u1")
+        // userProducts: action.products.filter(prod => prod.ownerId === "u1")
+        userProducts: action.userProducts
       };
     case CREATE_PRODUCT:
       // console.log(action.productData);
       const newProduct = new Product(
         // "p" + count, no need sec-10 v-4
         action.productData.id,
-        "u1",
+        // "u1",
+        // real mapping of orders to users
+        action.productData.ownerId,
         action.productData.title,
         action.productData.imageUrl,
         action.productData.description,

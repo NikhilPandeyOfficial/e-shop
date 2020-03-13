@@ -1,5 +1,5 @@
 Arguments: 
-  C:\Program Files\nodejs\node.exe C:\Program Files (x86)\Yarn\bin\yarn.js add react-navigation-drawer
+  C:\Program Files\nodejs\node.exe C:\Program Files (x86)\Yarn\bin\yarn.js add expo-linear-gradient@~8.0.0
 
 PATH: 
   C:\Program Files\Git\mingw64\bin;C:\Program Files\Git\usr\bin;C:\Users\nikhil\bin;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\iCLS;C:\Program Files\Intel\Intel(R) Management Engine Components\iCLS;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0;%JAVA_HOME%\bin;C:\WINDOWS\System32\OpenSSH;C:\Program Files\Microsoft VS Code\bin;C:\Python27;C:\Python\Python36-32\Scripts;C:\Program Files (x86)\Yarn\bin;C:\Program Files\Git\cmd;C:\Program Files\Git\mingw64\bin;C:\Program Files\Git\usr\bin;C:\Program Files\Redis;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Amazon\AWSCLI\bin;C:\Program Files\Java\jdk-12.0.2\bin;C:\Users\nikhil\AppData\Local\Android\Sdk;C:\Program Files\nodejs;C:\Users\nikhil\AppData\Local\Programs\Python\Python37\Scripts;C:\Users\nikhil\AppData\Local\Programs\Python\Python37;C:\Users\nikhil\AppData\Local\Microsoft\WindowsApps;C:\Program Files\Microsoft VS Code\bin;C:\Users\nikhil\AppData\Local\Yarn\bin;C:\Users\nikhil\AppData\Local\Android\Sdk\platform-tools;C:\Users\nikhil\AppData\Local\Android\Sdk\tools;C:\Program Files\heroku\bin;C:\Users\nikhil\AppData\Roaming\npm
@@ -14,7 +14,7 @@ Platform:
   win32 x64
 
 Trace: 
-  Error: EPERM: operation not permitted, unlink 'F:\React Native\sec-7-shop-app\node_modules\@babel\generator\node_modules\.bin'
+  Error: EPERM: operation not permitted, unlink 'F:\React Native\sec-8-shop-app\node_modules\@babel\compat-data\node_modules\.bin'
 
 npm manifest: 
   {
@@ -31,6 +31,7 @@ npm manifest:
       "@react-native-community/masked-view": "^0.1.5",
       "expo": "^36.0.2",
       "expo-font": "^8.0.0",
+      "moment": "^2.24.0",
       "react": "~16.9.0",
       "react-dom": "~16.9.0",
       "react-native": "https://github.com/expo/react-native/archive/sdk-36.0.0.tar.gz",
@@ -40,10 +41,12 @@ npm manifest:
       "react-native-screens": "2.0.0-alpha.12",
       "react-native-web": "~0.11.7",
       "react-navigation": "^4.1.1",
+      "react-navigation-drawer": "^2.3.4",
       "react-navigation-header-buttons": "^3.0.5",
       "react-navigation-stack": "^2.1.1",
       "react-redux": "^7.2.0",
-      "redux": "^4.0.5"
+      "redux": "^4.0.5",
+      "redux-thunk": "^2.3.0"
     },
     "devDependencies": {
       "@babel/core": "^7.0.0",
@@ -3747,6 +3750,11 @@ Lockfile:
     dependencies:
       minimist "0.0.8"
   
+  moment@^2.24.0:
+    version "2.24.0"
+    resolved "https://registry.yarnpkg.com/moment/-/moment-2.24.0.tgz#0d055d53f5052aa653c9f6eb68bb5d12bf5c2b5b"
+    integrity sha512-bV7f+6l2QigeBBZSM/6yTNq4P2fNpSWj/0e7jQcy87A8e7o2nAfP/34/2ky5Vw4B9S446EtIhodAzkFCcR4dQg==
+  
   morgan@^1.9.0:
     version "1.9.1"
     resolved "https://registry.yarnpkg.com/morgan/-/morgan-1.9.1.tgz#0a8d16734a1d9afbc824b99df87e738e58e2da59"
@@ -4425,6 +4433,11 @@ Lockfile:
       stacktrace-parser "^0.1.3"
       whatwg-fetch "^3.0.0"
   
+  react-navigation-drawer@^2.3.4:
+    version "2.3.4"
+    resolved "https://registry.yarnpkg.com/react-navigation-drawer/-/react-navigation-drawer-2.3.4.tgz#c1faa96f2d810158c81fdf1e4829bd7f8291181d"
+    integrity sha512-jPGFVsYB+Q51bMFoeXLO2sYXMQISu2b9fQWZ9QMTvRsA/9pqeBfW7AXM97qW+HdciiQJBdJ6DcttoybWjBSpWQ==
+  
   react-navigation-header-buttons@^3.0.5:
     version "3.0.5"
     resolved "https://registry.yarnpkg.com/react-navigation-header-buttons/-/react-navigation-header-buttons-3.0.5.tgz#5b8c0fc32bc59382f02015e4b2f19a135b99dca4"
@@ -4507,6 +4520,11 @@ Lockfile:
       safe-buffer "~5.1.1"
       string_decoder "~1.1.1"
       util-deprecate "~1.0.1"
+  
+  redux-thunk@^2.3.0:
+    version "2.3.0"
+    resolved "https://registry.yarnpkg.com/redux-thunk/-/redux-thunk-2.3.0.tgz#51c2c19a185ed5187aaa9a2d08b666d0d6467622"
+    integrity sha512-km6dclyFnmcvxhAcrQV2AkZmPQjzPDjgVlQtR0EQjxZPyJ0BnMf3in1ryuR8A2qU0HldVRfxYXbFSKlI3N7Slw==
   
   redux@^4.0.5:
     version "4.0.5"

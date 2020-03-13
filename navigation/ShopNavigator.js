@@ -1,9 +1,10 @@
 import React from "react";
 import { createStackNavigator } from "react-navigation-stack";
 import { createAppContainer, createSwitchNavigator } from "react-navigation";
-import { createDrawerNavigator } from "react-navigation-drawer";
-import { Platform } from "react-native";
+import { createDrawerNavigator, DrawerItems } from "react-navigation-drawer";
+import { Platform, Button, SafeAreaView, View } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
+import { useDispatch } from "react-redux";
 
 import ProductOverviewScreen from "./../screens/shop/ProductOverviewScreen";
 import COLORS from "../constants/Colors";
@@ -12,6 +13,9 @@ import CartScreen from "../screens/shop/CartScreen";
 import OrdersScreen from "./../screens/shop/OrdersScreen";
 import UserProductsScreen from "./../screens/user/UserProductsScreen";
 import EditProductScreen from "./../screens/user/EditProductScreen";
+import AuthScreen from "./../screens/user/AuthScreen";
+import StartupScreen from "./../screens/StartupScreen";
+import * as authActions from "../store/actions/auth";
 
 const defaultNavOptions = {
   headerStyle: {
@@ -96,9 +100,47 @@ const ShopNavigator = createDrawerNavigator(
   {
     contentOptions: {
       activeTintColor: COLORS.primary
+    },
+    // this will allows you to add your own content for the side drawer
+    // instead of default
+    contentComponent: props => {
+      const dispatch = useDispatch();
+      return (
+        <View style={{ flex: 1, padding: 20 }}>
+          <SafeAreaView forceInset={{ top: "always", horizontal: "never" }}>
+            <DrawerItems {...props} />
+            <Button
+              title="Log Out"
+              color={COLORS.primary}
+              onPress={() => {
+                dispatch(authActions.logout());
+                // props.navigation.navigate("Auth");
+                // no need of above code as same work will already
+                // done by code in 'NavigationContainer.js' file
+              }}
+            />
+          </SafeAreaView>
+        </View>
+      );
     }
   }
 );
 
+const AuthNavigator = createStackNavigator(
+  {
+    Auth: AuthScreen
+  },
+  {
+    defaultNavigationOptions: defaultNavOptions
+  }
+);
+
+const MainNavigator = createSwitchNavigator({
+  Startup: StartupScreen,
+  Auth: AuthNavigator,
+  Shop: ShopNavigator
+});
+
 // export default createAppContainer(ProductsNavigator);
-export default createAppContainer(ShopNavigator);
+// export default createAppContainer(ShopNavigator);
+export default createAppContainer(MainNavigator);

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import {
   View,
+  Text,
   ActivityIndicator,
   FlatList,
   Button,
@@ -59,6 +60,16 @@ const UserProductsScreen = props => {
     return (
       <View style={styles.centered}>
         <ActivityIndicator color={COLORS.primary} size="large" />
+      </View>
+    );
+  }
+
+  console.log(userProducts);
+
+  if (userProducts.length === 0) {
+    return (
+      <View style={styles.centered}>
+        <Text> No Product Found, maybe start adding some !!!</Text>
       </View>
     );
   }
@@ -140,7 +151,7 @@ const styles = StyleSheet.create({
   centered: {
     flex: 1,
     justifyContent: "center",
-    alignContent: "center"
+    alignItems: "center"
   }
 });
 
